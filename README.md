@@ -2,7 +2,18 @@
 
 This library allows you to use the [PicoCLI](https://picocli.info/) command framework with [Minecraft Forge](https://files.minecraftforge.net/).
 
+## Installation
 
+Add this to your dependencies in `build.gradle`:
+
+```groovy
+repositories {
+    maven { url 'https://jitpack.io' }
+}
+dependencies {
+    compile 'com.github.Rubydesic:MinecraftPicocli:master-SNAPSHOT'
+}
+```
 
 ## Getting Started
 
