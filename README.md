@@ -20,7 +20,7 @@ public class MyCommand implements Runnable {
     
     @Override
     public void run() {
-        sender.sendMessage(new TextChatComponent("You said " + echo));
+        sender.sendMessage(new TextComponentString("You said " + echo));
     }
     
 }
@@ -32,9 +32,9 @@ Now, simply register your command as you would any other using the `FMLServerSta
 @EventHandler
 public void onServerStart(FMLServerStartingEvent event) {
     ServerCommandManager manager = 
-        (ServerCommandManager) event.getServer().getcommandManager();
+        (ServerCommandManager) event.getServer().getCommandManager();
     
-    manager.registerCommand(new PicocliCommandBase(MyCommand.class));
+    manager.registerCommand(new PicocliCommandBase<>(MyCommand.class));
 }
 ```
 
@@ -44,8 +44,4 @@ Try out your command:
 /command "hello there, buddy"
 > You said hello there buddy
 ```
-
-
-
-
 
